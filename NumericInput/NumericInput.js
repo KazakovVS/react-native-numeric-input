@@ -80,7 +80,9 @@ export default class NumericInput extends Component {
             this.setState({ stringValue: '0.' })
             return
         }
-        if ((value.charAt(value.length - 1) === '.')) {
+        if ((value.charAt(value.length - 1) === '.') ||
+            (value.charAt(value.length - 2) === '.' && (value.charAt(value.length - 1) === '0'))
+        ) {
             this.setState({ stringValue: value })
             return
         }
